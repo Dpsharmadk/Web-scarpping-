@@ -12,11 +12,20 @@ product_urls = [
 # Target price for comparison
 target_price = 55
 
-
 def scrape_product(url):
     try:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/137.0.0.0 Safari/537.36"
+            )
+        }
+
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Checks if request was successful
+
+        soup = BeautifulSoup(response.text, "html.parser")  
 
         # Extract title
         title = soup.find("h1").text
@@ -30,7 +39,7 @@ def scrape_product(url):
         image_url = "https://books.toscrape.com/" + image_relative.replace("../", "")
 
         # Download image
-        image_data = requests.get(image_url).content
+        image_data = requests.get(image_url, headers=headers).content
 
         os.makedirs("images", exist_ok=True)
 
