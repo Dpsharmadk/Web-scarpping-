@@ -1,82 +1,54 @@
-# Web-scarpping
 # Web Scraping Assignment
 
-## Overview
+## Project Description
 
-This project is a Python-based web scraping application that extracts product information from a website. The program fetches webpage data, extracts product details, downloads product images, and compares product prices with a target price.
+This project demonstrates web scraping using Python, Requests, and BeautifulSoup.
 
-## Features
+The program:
 
-* Fetches webpage data using Python.
-* Extracts product title.
-* Extracts product price.
-* Extracts product image URL.
-* Downloads product images automatically.
-* Compares product price with a target price.
-* Handles multiple product URLs.
+* Scrapes book titles from BooksToScrape
+* Extracts product prices
+* Compares prices with a target value
+* Downloads product images
+* Saves images locally
 
 ## Technologies Used
 
-* Python 3
+* Python
 * Requests
-* BeautifulSoup (bs4)
+* BeautifulSoup4
 
-## Installation
+## How to Run
 
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-```
-
-2. Install required libraries:
+### Install Dependencies
 
 ```bash
 pip install requests beautifulsoup4
 ```
 
-## Usage
-
-Run the script using:
+### Run the Program
 
 ```bash
 python web_scrapping.py
 ```
 
-## Expected Output
+## Features Implemented
+
+* Sending HTTP requests
+* Parsing HTML content
+* Extracting product information
+* Price comparison
+* Downloading images
+* Error handling using try-except
+
+## Output
 
 The program displays:
 
-* Product Title
-* Product Price
-* Product Image URL
-* Price comparison result
-* Image download status
+* Book Title
+* Price
+* Price Comparison Result
+* Image Download Status
 
-Example:
+Downloaded images are stored inside the `images` folder.
 
-```text
-Title: A Light in the Attic
-Price: 51.77
-Image URL: https://example.com/image.jpg
-Result: Price is below target price
-Image downloaded successfully!
-```
-
-## Project Structure
-
-```text
-WebScraping-DevPratapSharma/
-│
-├── web_scrapping.py
-├── README.md
-└── images/
-```
-
-## Author
-
-Dev Pratap Sharma
-
-## License
-
-This project is created for educational and learning purposes.
